@@ -1,0 +1,33 @@
+body {
+    background-color: #003b64;
+    color: #fff200;
+}
+
+img {
+   max-width:100%;
+}
+
+.error {
+color:white;
+font-weight:bold;
+font-size:3em;
+}
+
+.table > tbody > tr > td{
+    vertical-align: middle; 
+}
+
+.mainBtn {
+color:black;
+}
+
+
+.location {
+color:white;
+font-weight:bold;
+}
+
+.mainTitleRow {
+    font-size: 3vmax;
+    font-weight: bold;   
+}

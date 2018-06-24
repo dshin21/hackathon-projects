@@ -1,0 +1,28 @@
+body {
+    background-color: #4688F1;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+ }
+ 
+ .right-block {
+    display: block;
+    margin-left: auto;
+ }
+ 
+ h1{
+	 font-size: 60px;
+	 color: #fff200;
+	 font-weight: bold;
+	 text-align: center;
+ }
+ 
+ h2{
+	 font-size: 40px;
+	 color: #fff200;
+	 font-weight: bold;
+	 text-align: center;
+ }

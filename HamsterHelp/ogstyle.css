@@ -1,0 +1,32 @@
+body{
+    background-color: #003b64;
+}
+
+h1{
+    color: #fff200;
+    font-size: 60px;
+}
+
+h2{
+    color: #fff200;
+	font-size: 45px;
+}
+
+.helpButton{
+	padding: 20px;
+}
+
+.noHelpButton{
+	padding: 20px;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    border-top: 0;
+    padding: 0px;
+    padding-top: 0px;
+    /* margin-top: 5%; */
+}
+
+.titley {
+	font-family: Impact;
+}

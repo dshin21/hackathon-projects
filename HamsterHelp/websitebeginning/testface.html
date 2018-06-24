@@ -1,0 +1,35 @@
+<html>
+
+<html>
+  <body>
+   <p id="demo"></p>
+
+  <script language="javascript">
+
+
+	var url = "https://api.haystack.ai/api/image/analyze?output=json&apikey=4c200a68cae1b636cc428e2928c32ebb";
+	var formData = new FormData();
+	formData.append("image", "Images/Oliver.jpg");
+
+	xhttp.open("POST", url, true);
+		alert("Hello");
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() { 
+
+	    if (this.readyState == 4 && this.status == 200) { 
+
+		var thing = JSON.parse(this.response);
+		//document.getElementById("demo").innerHTML = response.age; 
+	    }
+	};
+
+
+	xhttp.send(formData);
+
+
+
+    
+  </script>
+  </body>
+</html>
+

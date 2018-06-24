@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>HamsterTech Kiosk</title>
+
+    <!-- Bootstrap -->
+
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link href="style.css" rel="stylesheet">
+
+
+
+
+</head>
+
+
+<body>
+
+    <table class="table text-center">
+        <tbody>
+            <tr>
+                <td colspan="2">
+                    <h1 class="titley">How can we help you today?</h1>
+                </td>
+            </tr>
+            <tr id="rowFocus">
+                <td id="focus">
+                    <img src="hamster.png">
+                    <br />
+                    <br />
+                    <button class="myButton btn btn-med mainBtn" onclick="load()">
+                        Please help me
+                    </button>
+                    <div id="animation"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="test"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script type="text/javascript">
+        function load() {
+            $('#animation').append('<img id="loading" src="websitebeginning/Images/ajax-loader.gif" alt="Currently Loading" />');
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", "http://localhost:8888/getstring", true);
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    string = xmlhttp.responseText;
+                    string = string.split(',');
+                    $('h1').text(string[0] + 's are in: ');
+                    $('#focus').html('<img src="resources/' + string[1] + 'Map.png" id="map">');
+                    $('#map').css('padding-left', '100px');
+                    $('td').css('padding', '10px');
+                    $('#rowFocus').append("<td><h2>Would you like assisstance from a blue shirt?</h2>"
+                        + "<button class='myButton btn btn-med mainBtn helpButton' onclick='test()'>"
+                        + "Please help me</button>"
+                        + "<button class='myButton btn btn-med mainBtn noHelpButton'>"
+                        + "I'll be okay</button></td>");
+                    $('.helpButton, .noHelpButton').css('margin', '20px');
+                    $('.helpButton').css('background-color', '20px');
+                    $('noHelpButton').css('background-color', '20px');
+                    $('#loading').fadeOut(500, function () { $(this).remove(); });
+                }
+            }
+
+
+            xmlhttp.send();
+        }
+
+        function test() {
+            $('#animation').append('<img id="loading" src="websitebeginning/Images/ajax-loader.gif" alt="Currently Loading" />');
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", "http://localhost:8888/anything", true);
+            xmlhttp.onreadystatechange = function () {
+
+            }
+            xmlhttp.send();
+        }
+    </script>
+</body>
+
+</html>
